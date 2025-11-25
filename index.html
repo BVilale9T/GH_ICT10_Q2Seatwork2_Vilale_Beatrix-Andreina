@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial scale=1">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.7.3/core.css">
+    <script type="module" src="https://pyscript.net/releases/2025.7.3/core.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Student Grade Calculator</title>
+</head>
+<body>
+    <h1>STUDENT GRADE CALCULATOR</h1>
+    <label>FIRST NAME</label>
+    <form>
+        <input type="text" id="firstName">
+    </form>
+    <br>
+    <br>
+    <label>LAST NAME</label>
+    <form>
+        <input type="text" id="lastName">
+    </form>
+    <br>
+    <p>ENTER YOUR GRADES:</p>
+    <label>SCIENCE</label>
+    <form>
+        <input type="text" id="science" placeholder="e.g. 85">
+    </form>
+    <br>
+    <br>
+    <label>ENGLISH</label>
+    <form>
+        <input type="text" id="english" placeholder="e.g. 90">
+    </form>
+    <br>
+    <br>
+    <label>ICT</label>
+    <form>
+        <input type="text" id="ict" placeholder="e.g. 88">
+    </form>
+    <br>
+    <br>
+    <label>MATH</label>
+    <form>
+        <input type="text" id="math" placeholder="e.g. 92">
+    </form>
+    <br>
+    <br>
+    <label>FILIPINO</label>
+    <form>
+        <input type="text" id="filipino" placeholder="e.g. 87">
+    </form>
+    <br>
+    <br>
+    <label>PHYSICAL EDUCATION</label>
+    <form>
+        <input type="text" id="pe" placeholder="e.g. 95">
+    </form>
+    <br>
+    <br>
+    <button id="calculateBtn" type="button">CALCULATE GWA</button>
+    <br>
+    <br>
+    <div id="output"></div>
+    <py-script src="main.py"></py-script>
+
+    <script>
+        // Simple client-side calculation: average of entered numeric grades
+        document.getElementById('calculateBtn').addEventListener('click', function () {
+            const ids = ['science', 'english', 'ict', 'math', 'filipino', 'pe'];
+            let sum = 0;
+            let count = 0;
+            for (const id of ids) {
+                const el = document.getElementById(id);
+                if (!el) continue;
+                const v = el.value.trim();
+                if (v === '') continue;
+                const n = Number(v);
+                if (isNaN(n)) {
+                    document.getElementById('output').innerText = 'Please enter valid numeric grades.';
+                    return;
+                }
+                sum += n;
+                count += 1;
+            }
+            if (count === 0) {
+                document.getElementById('output').innerText = 'Please enter at least one grade.';
+                return;
+            }
+            const gwa = sum / count;
+            document.getElementById('output').innerText = `GWA: ${gwa.toFixed(2)}`;
+        });
+    </script>
+</body>
+</html>

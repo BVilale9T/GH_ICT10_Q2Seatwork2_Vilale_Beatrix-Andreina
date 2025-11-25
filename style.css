@@ -1,0 +1,12 @@
+body {
+        background-color: rgb(159, 213, 255);
+        font-family:Broadway;
+        color: rgb(35, 33, 33);
+        font-size: 30px;
+    }
+
+button {
+        font-family:Broadway;
+        color: rgb(35, 33, 33);
+        font-size: 20px;
+}

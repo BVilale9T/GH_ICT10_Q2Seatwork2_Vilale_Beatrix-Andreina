@@ -1,12 +1,51 @@
 body {
-        background-color: rgb(159, 213, 255);
-        font-family:Broadway;
-        color: rgb(35, 33, 33);
-        font-size: 30px;
-    }
+    background-color: rgb(159, 213, 255);
+    font-family: "Broadway", Arial, sans-serif;
+    color: rgb(35, 33, 33);
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+form {
+    max-width: 500px;
+    margin: auto;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    font-size: 18px;
+    margin-top: 5px;
+}
 
 button {
-        font-family:Broadway;
-        color: rgb(35, 33, 33);
-        font-size: 20px;
+    font-family: "Broadway", Arial, sans-serif;
+    font-size: 20px;
+    color: rgb(35, 33, 33);
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+#output {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
 }

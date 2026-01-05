@@ -53,5 +53,26 @@ def do_calc(e):
 
     # Display the computed General Weighted Average
     display(f"General Weighted Average: {average}", target="output")
+    # Conditional statements in python
+from pyscript import display, document
+
+
+def compute_average(e):
+    num1 = int(document.getElementById('input1').value)
+    num2 = int(document.getElementById('input2').value)
+
+# Compute average
+average = (input1 + input2 + input3 + input4 + input5 + input6) / 2
+
+# Determine pass/fail
+if average >=75:
+    result = "Yes!"
+else:
+    result = "Nope!"
+
+# Display results
+document.getElementById("average").innerText = str(round(average, 2))
+document.getElementById("reslt").innerText = result
+
 
 
